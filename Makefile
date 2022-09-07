@@ -5,8 +5,8 @@ all:
 	docker build -t $(IMAGE_NAME) .
 	docker run -d --name $(CONTAINER_NAME) $(IMAGE_NAME)
 
-del-old-container:
+del-container:
 	docker stop $(CONTAINER_NAME)
 	docker rm $(CONTAINER_NAME)
 
-restart: del-old-container all
+restart: del-container all
